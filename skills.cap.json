@@ -1,0 +1,51 @@
+{
+  "name": "codex-skills-mcp",
+  "capabilities": [
+    {
+      "method": "skills.search",
+      "params_schema": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "skills.get",
+      "params_schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" }
+        },
+        "required": ["name"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "skills.install",
+      "params_schema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "version": { "type": "string" }
+        },
+        "required": ["name"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "method": "skills.verify",
+      "params_schema": {
+        "type": "object",
+        "properties": {
+          "artifactUrl": { "type": "string" },
+          "sha256": { "type": "string" }
+        },
+        "required": ["artifactUrl", "sha256"],
+        "additionalProperties": false
+      }
+    }
+  ]
+}
